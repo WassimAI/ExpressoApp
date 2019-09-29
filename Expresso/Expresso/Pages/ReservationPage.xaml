@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Expresso.Pages.ReservationPage" BackgroundColor="AntiqueWhite">
+    <ContentPage.Content>
+        <StackLayout Margin="10">
+            <Entry x:Name="entName" Placeholder="Name"/>
+            <Entry x:Name="entEmail" Placeholder="Email"/>
+            <Entry x:Name="entPhone" Placeholder="Phone"/>
+            <Entry x:Name="entTotalPeople" Placeholder="Total People"/>
+            <Label Text="Booking Date"/>
+            <DatePicker x:Name="dbBookingDate" Format="D"></DatePicker>
+            <Label Text="Booking Time"/>
+            <TimePicker x:Name="tpBookingTime"></TimePicker>
+            <Button x:Name="btnBookTable" Text="Book Table" TextColor="white" FontSize="Medium" BackgroundColor="#f50057" Clicked="BtnBookTable_Clicked"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
