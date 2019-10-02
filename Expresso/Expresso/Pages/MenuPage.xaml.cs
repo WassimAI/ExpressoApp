@@ -37,6 +37,7 @@ namespace Expresso.Pages
                 }
 
                 LvMenu.ItemsSource = Menus;
+                busyIndicator.IsRunning = false;
             }
 
             first = false;
@@ -46,7 +47,12 @@ namespace Expresso.Pages
         {
             //To store the selected item as an instance of menu class
             var selectedMenu = e.SelectedItem as Menu;
-            Navigation.PushAsync(new SubMenuPage(selectedMenu));
+            if(selectedMenu != null)
+            {
+                Navigation.PushAsync(new SubMenuPage(selectedMenu));
+            }
+
+            ((ListView)sender).SelectedItem = null;
         }
     }
 }

@@ -4,20 +4,28 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
+             	xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
              x:Class="Expresso.Pages.MenuPage">
     <ContentPage.Content>
-        <ListView SeparatorVisibility="None" HasUnevenRows="True" x:Name="LvMenu" ItemSelected="LvMenu_ItemSelected">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <Grid>
-                            <Image Source="{Binding Image}" HeightRequest="200" Aspect="Fill"/>
-                            <BoxView BackgroundColor="Black" Opacity=".4"/>
-                            <Label Text="{Binding Name}" FontSize="Large" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center"/>
-                        </Grid>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+        <Grid>
+            <ListView SeparatorVisibility="None" HasUnevenRows="True" x:Name="LvMenu" ItemSelected="LvMenu_ItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <!--<Image Source="{Binding Image}" HeightRequest="200" Aspect="Fill"/>-->
+                                <ffimageloading:CachedImage LoadingPlaceholder="placeholderimage.png" HeightRequest="200" Aspect="Fill"
+			                        DownsampleToViewSize="true"
+			                        Source = "{Binding Image}" CacheType="All">
+                                </ffimageloading:CachedImage>
+                                <BoxView BackgroundColor="Black" Opacity=".4"/>
+                                <Label Text="{Binding Name}" FontSize="Large" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <ActivityIndicator x:Name="busyIndicator" HorizontalOptions="Center" VerticalOptions="Center" Color="#FF5722" IsRunning="True"/>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

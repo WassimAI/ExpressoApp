@@ -6454,19 +6454,22 @@ namespace Expresso.Droid
 			public const int phone = 2131165501;
 			
 			// aapt resource value: 0x7F07013E
-			public const int reservation = 2131165502;
+			public const int placeholderimage = 2131165502;
 			
 			// aapt resource value: 0x7F07013F
-			public const int tooltip_frame_dark = 2131165503;
+			public const int reservation = 2131165503;
 			
 			// aapt resource value: 0x7F070140
-			public const int tooltip_frame_light = 2131165504;
+			public const int tooltip_frame_dark = 2131165504;
 			
 			// aapt resource value: 0x7F070141
-			public const int twitter = 2131165505;
+			public const int tooltip_frame_light = 2131165505;
 			
 			// aapt resource value: 0x7F070142
-			public const int youtube = 2131165506;
+			public const int twitter = 2131165506;
+			
+			// aapt resource value: 0x7F070143
+			public const int youtube = 2131165507;
 			
 			static Drawable()
 			{

@@ -24,6 +24,8 @@ namespace Expresso.iOS
         {
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App());
+            UITabBar.Appearance.SelectedImageTintColor = UIColor.Yellow;
+            FFImageLoading.Forms.Platform.CachedImageRenderer.Init();
 
             return base.FinishedLaunching(app, options);
         }
